@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded' , () => {
     // var ctx = gameDisplay.get
 
     let birdLeft = 220;
-    let birdBottom = 250;
+    let birdBottom = 450;
     let gravity = 2;
     let isGameOver = false;
 

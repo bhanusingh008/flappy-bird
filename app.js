@@ -127,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(scoreTimer);
     overDisplay();
     isGameOver = true;
-    console.log("Game Over");
     overDisplay();
     document.removeEventListener("keyup", jump);
   }

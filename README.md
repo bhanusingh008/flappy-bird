@@ -3,7 +3,6 @@ The following game takes us on a nostalgic journey of flappy bird.
 
 <img width="298" alt="lappy" src="https://github.com/bhanusingh008/flappy-bird/assets/122738012/98415878-7032-4597-83df-ff1cd79cdf83">
 
-
 ### Willing to Contribute?
 First off, thanks for taking the time to contribute! ❤️
 

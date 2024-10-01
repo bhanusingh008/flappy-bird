@@ -1,7 +1,7 @@
 # Browser Based Flappy Bird Game 
 The following game takes us on a nostalgic journey of flappy bird.
 
-<img width="298" alt="lappy" src="https://github.com/bhanusingh008/flappy-bird/assets/122738012/98415878-7032-4597-83df-ff1cd79cdf83">
+<img width="298" alt="lappy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/122738012/274305688-98415878-7032-4597-83df-ff1cd79cdf83.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241001%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241001T060836Z&X-Amz-Expires=300&X-Amz-Signature=7d22adbac760e385716e6285e71a4702bbdfbaca4e77ab575780264c885a5106&X-Amz-SignedHeaders=host">
 
 ### Willing to Contribute?
 First off, thanks for taking the time to contribute! ❤️
@@ -28,8 +28,7 @@ All types of contributions are encouraged and valued. Please make sure to read t
 A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
 
 - Make sure that you are using the latest version.
-- Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions (Make sure that you have read the [documentation](). If you are looking for support, you might want to check [this section](#i-have-a-question)).
-- To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](issues?q=label%3Abug).
+- Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions.
 - Also make sure to search the internet (including Stack Overflow) to see if users outside of the GitHub community have discussed the issue.
 - Collect information about the bug:
 - Stack trace (Traceback)

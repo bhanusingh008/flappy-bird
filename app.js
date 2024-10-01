@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.addEventListener("keyup", jump);
+  document.addEventListener("touchstart", jump);
 
   function generateObstacle() {
     // MOVE OBSTACLE WITH TIME RANGE 10ms

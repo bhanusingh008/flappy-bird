@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     restart.classList.add("overDisplay");
     button.classList.add("restart-btn");
-    button.innerHTML = "restart";
+    button.innerHTML = "Restart Game";
 
     function onButtonClick() {
       window.location.reload();

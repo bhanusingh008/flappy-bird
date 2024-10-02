@@ -1,7 +1,7 @@
 .game-container {
     width: 500px;
     height: 680px;
-    position: absolute;
+    position:absolute;
     overflow: hidden;
 }
 
@@ -87,3 +87,26 @@
 footer{
     text-align: center;
 }
+.start-btn {
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin: 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    margin-left: 150px;
+}
+.score-display {
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    font-size: 24px; 
+    color: white; 
+    z-index: 10; 
+  }
+  

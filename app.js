@@ -13,22 +13,30 @@ document.addEventListener("DOMContentLoaded", () => {
     scoreTrack.innerHTML = "Score: " + score;
   }
 
+  // Insert the score display at the top of the game container
   gameDisplay.appendChild(scoreTrack);
 
-  let scoreTimer = setInterval(increaseScore, 1250);
-
+  let scoreTimer;
   let birdLeft = 220;
   let birdBottom = 450;
   let gravity = 2;
   let isGameOver = false;
 
   function startGame() {
+    score = 0; // Reset score when starting the game
+    birdBottom = 450; // Reset bird position
+    scoreTrack.innerHTML = "Score: " + score; // Reset score display
+    isGameOver = false; // Reset game over state
+    scoreTimer = setInterval(increaseScore, 1250); // Start score timer
+    gameTimerId = setInterval(moveBird, 20); // Start game loop
+    generateObstacle(); // Start generating obstacles
+  }
+
+  function moveBird() {
     birdBottom -= gravity;
     bird.style.bottom = birdBottom + "px";
     bird.style.left = birdLeft + "px";
   }
-
-  let gameTimerId = setInterval(startGame, 20);
 
   function jump() {
     if (birdBottom < 600 && birdBottom >= 153) {
@@ -42,13 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("touchstart", jump);
 
   function generateObstacle() {
-    // MOVE OBSTACLE WITH TIME RANGE 10ms
     let timerId2 = setInterval(moveObstacle, 10);
-
-    // GENERATE OBSTACLE AGAIN AFTER 3s
     let generationTimerId = setTimeout(generateObstacle, 1250);
 
-    // IF GAME IS OVER STOP GENERATING
     if (isGameOver) {
       clearTimeout(generationTimerId);
       clearInterval(timerId2);
@@ -73,20 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
     upperobstacle.style.left = obstacleLeft + "px";
     let upperobstacle_bottom = obstacleBottom + 300 + Math.random() * 100 + 140;
     upperobstacle.style.bottom = upperobstacle_bottom + "px";
-    // upperobstacle_bottom
 
     function moveObstacle() {
       obstacleLeft -= 2;
       obstacle.style.left = obstacleLeft + "px";
       upperobstacle.style.left = obstacleLeft + "px";
 
-      // REMOVING OBSTACLE FROM THE GAME DISPLAY
       if (obstacleLeft <= -5) {
         clearInterval(timerId2);
         gameDisplay.removeChild(obstacle);
         gameDisplay.removeChild(upperobstacle);
       }
-      // CONDITION FOR GAME OVER..
       if (
         birdBottom <= 150 ||
         (((obstacleLeft > 220 && obstacleLeft < 270) ||
@@ -99,11 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  generateObstacle();
 
   function overDisplay() {
     let button = document.createElement("button");
-
     let restart = document.createElement("div");
 
     restart.classList.add("overDisplay");
@@ -119,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gameDisplay.appendChild(restart);
     gameDisplay.appendChild(button);
 
-    restart.innerHTML = score;
+    restart.innerHTML = "Final Score: " + score; // Display final score
   }
 
   function gameOver() {
@@ -127,7 +126,18 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(scoreTimer);
     overDisplay();
     isGameOver = true;
-    overDisplay();
     document.removeEventListener("keyup", jump);
   }
+
+  // Create and add the start button
+  const startButton = document.createElement("button");
+  startButton.innerHTML = "Start Game";
+  startButton.classList.add("start-btn");
+  document.body.insertBefore(startButton, gameDisplay); 
+
+  // Start the game when the start button is clicked
+  startButton.addEventListener("click", () => {
+    startButton.style.display = "none"; 
+    startGame(); // Start the game
+  });
 });
